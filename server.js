@@ -272,6 +272,8 @@ app.post("/generate", jsonParser, function(request, response_generate = response
                         top_k: request.body.top_k,
                         top_p: request.body.top_p,
                         typical: request.body.typical,
+                        stopping_strings: request.body.stopping_strings,
+                        singleline: request.body.singleline,
                         sampler_order: sampler_order
                         };
         if(request.body.singleline) {

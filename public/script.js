@@ -1310,7 +1310,10 @@ $(document).ready(function(){
 
                         var this_settings = koboldai_settings[koboldai_setting_names[preset_settings]];
                         
-                        
+                        var stopping_strings = "";
+                        if(singleline) stopping_strings = ["\n"];
+                        else stopping_strings = [name1+":", "You:"];
+
                         generate_data = {prompt: finalPromt, 
                                         gui_settings: false, 
                                         max_context_length: parseInt(this_max_context),//this_settings.max_length,
@@ -1331,7 +1334,8 @@ $(document).ready(function(){
                                         s4:this_settings.sampler_order[3],
                                         s5:this_settings.sampler_order[4],
                                         s6:this_settings.sampler_order[5],
-                                        s7:this_settings.sampler_order[6]
+                                        s7:this_settings.sampler_order[6],
+                                        stopping_strings:stopping_strings
                                         };
                     }
                 }
